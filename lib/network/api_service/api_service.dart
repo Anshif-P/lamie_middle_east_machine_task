@@ -29,6 +29,27 @@ class Api {
     }
   }
 
+  static EitherResponse postApi(String url, Map map,
+      [String? userToken]) async {
+    final uri = Uri.parse(url);
+    if (userToken != null) {
+      _header['usertoken'] = userToken;
+    }
+    final body = jsonEncode(map);
+    dynamic fetchedData;
+    try {
+      final response = await http.post(uri, body: body, headers: _header);
+      fetchedData = _getResponse(response);
+      return Right(fetchedData);
+    } on SocketException {
+      return Left(InternetException());
+    } on http.ClientException {
+      return Left(RequestTimeOutException());
+    } catch (e) {
+      return Left(BadRequestException());
+    }
+  }
+
   static _getResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:

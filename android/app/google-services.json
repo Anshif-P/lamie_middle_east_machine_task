@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384189160427",
+    "project_id": "chatapplogin-201cc",
+    "storage_bucket": "chatapplogin-201cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384189160427:android:9d37c8115d0620566e57ae",
+        "android_client_info": {
+          "package_name": "com.example.lamie_middle_east_machine_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRsWjX034ObLou9pMIIZDqsmD1eOxxtSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
